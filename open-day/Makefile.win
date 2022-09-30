@@ -1,0 +1,28 @@
+# Project: Out_Of_Internet
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = Out_Of_Internet.o
+LINKOBJ  = Out_Of_Internet.o
+LIBS     = -L"E:/Dev C/Dev-Cpp/MinGW64/lib" -L"E:/Dev C/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -lwinmm -g3
+INCS     = -I"E:/Dev C/Dev-Cpp/MinGW64/include" -I"E:/Dev C/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Dev C/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"E:/Dev C/Dev-Cpp/MinGW64/include" -I"E:/Dev C/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Dev C/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"E:/Dev C/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Out_Of_Internet.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Out_Of_Internet.o: Out_Of_Internet.c
+	$(CC) -c Out_Of_Internet.c -o Out_Of_Internet.o $(CFLAGS)
